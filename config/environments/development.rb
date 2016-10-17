@@ -1,5 +1,6 @@
 Nomster::Application.configure do
-  # Settings specified here will take precedence over those in config/application.rb.
+  config.action_mailer.default_url_options = { host: 'localhost:3030' }
+  # Settings specified here will takconfig.action_mailer.default_url._options = { host: 'https://nomster-sylvia-yu.herokuapp.com' }e precedence over those in config/application.rb.
 
   # In the development environment your application's code is reloaded on
   # every request. This slows down response time but is perfect for development
