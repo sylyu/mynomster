@@ -65,3 +65,10 @@ body {
 .pagination .next_page {
     margin-left: 1em;
 }
+.field_with_errors {
+  color: #ff3333;
+  backround_color: #FFEEEE;
+  border_radius: 3px;
+  padding: 8px;
+
+}
