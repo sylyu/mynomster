@@ -82,16 +82,14 @@
   <div class="clear"></div>
     <% @place.comments.each do |comment| %>
       <div class="col-xs-12 col-sm-6">
-        <div>
           <blockquote>
-            <% if comment.humanized_rating.present? %>
-              <b><%= comment.humanized_rating %></b> -
+            <% if comments.humanized_rating.present? %>
+              <b><%= comments.humanized_rating %></b> -
             <% end %>
-            <%= comment.message %>
-            <small><%= comment.user.email %></small>
+            <%= comments.message %>
+            <small><%= comments.user.email %></small>
           </blockquote>
-        </div>
-    </div>
+      </div>
   <% end %>
 </div>
 
