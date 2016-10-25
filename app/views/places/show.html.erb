@@ -56,6 +56,7 @@
           <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
           <h4 class="modal-title" id="myModalLabel">Add a comment</h4>
         </div>
+
         <%= simple_form_for @comment, url: place_comments_path(@place) do |f| %>
 
           <div class="modal-body">
@@ -67,6 +68,14 @@
             <%= f.submit "Add the Comment", class: 'btn btn-primary' %>
            </div>
         <% end %> 
+
+        <!--div class isn't cleariing? -->
+        <div class="clear"></div>
+        <%= simple_form_for @photo, url: '#' do |f| %>  
+          <%= f.input :caption %>
+          <%= f.submit "Add the Photo", class: 'btn btn-primary' %>
+        <% end %> 
+
       </div>
     </div>
   </div>
@@ -78,7 +87,7 @@
       Add a comment
     </button>
   </div>
-
+git
   <div class="clear"></div>
     <% @place.comments.each do |comment| %>
   <div class="col-xs-12 col-sm-6">
