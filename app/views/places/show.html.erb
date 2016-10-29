@@ -43,6 +43,10 @@
   <div class="pull_right">
     <% if current_user && current_user == @place.user %>
       <%= link_to 'Edit', edit_place_path(@place), class: 'btn btn-primary' %>
+      <!-- Button trigger photo modal -->
+      <button class="btn btn-primary pull_right" data-toggle="modal" data-target="#myPhotoModal">
+        Upload a photo
+      </button>
       <%= link_to 'Destroy', place_path(@place), method: :delete, data: {confirm: 'Are you sure you want to delete this?'}, class: 'btn btn_danger' %>
     <% end %>
   </div>
@@ -96,7 +100,6 @@
   </div>
   <% end %>
 
-
   <!-- Photo Modal -->
   <div class="modal fade" id="myPhotoModal" tabindex="-1" role="dialog" aria-labelledby="myPhotoModalLabel" aria-hidden="true">
     <div class="modal-dialog">
@@ -116,32 +119,17 @@
           <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
           <%= f.submit "Upload Photo", class: 'btn btn-primary' %>
         </div>
-
       <% end %>
-
       </div>
     </div>
   </div>
 
-  <div class="col-xs-10 col-xs-offset-1">
-    <h1 class="pull-left">Photos</h1><br /><br />
-    <!-- Button trigger photo modal -->
-    <button class="btn btn-primary btn-lg pull_right" data-toggle="modal" data-target="#myPhotoModal">
-      Upload a photo
-    </button>
-  </div>
-
-  <div class="clear"></div>
   <% @place.photos.each do |photo| %>
     <div>
-        <%= photo.caption %>
-        <%= image_tag photo.picture, class: 'img-responsive' %>
-        <!--- vertical Image causes picture rotation -->
-        
+      <%= photo.caption %>
+      <%= image_tag photo.picture, class: 'img-responsive' %>
     </div>
-
   <% end %>
-
 
 </div>
 

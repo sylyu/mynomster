@@ -17,9 +17,17 @@
           <%= place.comments.last.message %>
           <small><%= place.comments.last.user.email %></small>
         </blockquote>
+
+        <% if place.photos.present? %>
+          <%= image_tag place.photos.first.picture, class: 'img-responsive' %>
+        <% end %>
+
+
       </div>
     <% end %>
   </div>
 <% end %>
+
+
 
 <%= will_paginate @places %>
