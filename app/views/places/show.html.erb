@@ -63,10 +63,12 @@
             <%= f.input :message %>
             <%= f.input :rating, as: :select, collection: Comment::RATINGS %>
           </div>
+
           <div class="modal-footer">
             <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
             <%= f.submit "Add the Comment", class: 'btn btn-primary' %>
            </div>
+
         <% end %> 
 
       </div>
@@ -114,6 +116,7 @@
           <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
           <%= f.submit "Upload Photo", class: 'btn btn-primary' %>
         </div>
+
       <% end %>
 
       </div>
@@ -132,8 +135,13 @@
   <% @place.photos.each do |photo| %>
     <div>
         <%= photo.caption %>
+        <%= image_tag photo.picture, class: 'img-responsive' %>
+        <!--- vertical Image causes picture rotation -->
+        
     </div>
+
   <% end %>
+
 
 </div>
 

@@ -43,6 +43,7 @@ gem 'geocoder', '1.3.4'
 gem 'figaro', '>= 1.0.0'
 gem 'will_paginate'
 gem 'carrierwave', '>= 1.0.0.beta', '< 2.0'
+gem 'fog'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'
