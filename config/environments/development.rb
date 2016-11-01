@@ -1,4 +1,5 @@
 Nomster::Application.configure do
+  config.action_mailer.delivery_method = :test
 # config.action_mailer.delivery_method = :smtp
 
 # config.action_mailer.smtp_settings = {
@@ -10,9 +11,7 @@ Nomster::Application.configure do
 #   user_name: ENV['GMAIL_ADDRESS'],
 #   password: ENV['GMAIL_PASSWORD']
 # }
-  
-  config.action_mailer.delivery_method = :test
-  
+
   config.action_mailer.default_url_options = { host: 'localhost:3030' }
   # Settings specified here will takconfig.action_mailer.default_url._options = { host: 'https://nomster-sylvia-yu.herokuapp.com' }e precedence over those in config/application.rb.
 
@@ -29,7 +28,7 @@ Nomster::Application.configure do
   config.action_controller.perform_caching = false
 
   # Don't care if the mailer can't send.
-  config.action_mailer.raise_delivery_errors = true
+  config.action_mailer.raise_delivery_errors = false
 
   # Print deprecation notices to the Rails logger.
   config.active_support.deprecation = :log
